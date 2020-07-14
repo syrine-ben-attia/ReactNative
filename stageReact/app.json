@@ -1,0 +1,19 @@
+{
+  "name": "stageReact",
+  "displayName": "stageReact",
+  "splash": {
+    "image": "./article-ideas.png"
+  },
+  "expo": {
+    "name": "stageReact",
+    "slug": "stageReact",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+
+    
+  }
+
+  
+}
