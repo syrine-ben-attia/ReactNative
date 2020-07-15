@@ -1,10 +1,11 @@
-import react from 'react'
+import React from 'react'
 import { StyleSheet, View , Text , Image }  from 'react-native'
 
 
 class articleItem extends React.Component {
     render(){
       const articleItem= this.props.article; 
+      console.log("article",articleItem)
       return (
           <View style={Styles.main_container} >
               <image  style={styles.Image} source ={{uri: "image"}}/>
@@ -21,3 +22,4 @@ class articleItem extends React.Component {
       )
     }
 }
+export default articleItem;
