@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 const articleSchema = new Schema({
   title:  String,
   body:   String,
+  like: Boolean
 },{
   collection : 'users'
 });
