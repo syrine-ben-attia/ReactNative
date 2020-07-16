@@ -54,8 +54,41 @@ articleRoutes.route('/update/:id').post(function(req, res) {
 });
 
 
+articleRoutes.route('/like/:id').get(function(req,res){
+    article.findById(req.params.id, function(err, todo) {
+        if (!article)
+            res.status(404).send("data is not found");
+        else
+            console.log(todo);
+            todo.like = true;
 
 
+        todo.save().then(article => {
+            res.json('Article updated!');
+        })
+            .catch(err => {
+                res.status(400).send("Update not possible");
+            });
+    });
+})
+
+articleRoutes.route('/dislike/:id').get(function(req,res){
+    article.findById(req.params.id, function(err, todo) {
+        if (!article)
+            res.status(404).send("data is not found");
+        else
+            console.log(todo);
+        todo.like = false;
+
+
+        todo.save().then(article => {
+            res.json('Article updated!');
+        })
+            .catch(err => {
+                res.status(400).send("Update not possible");
+            });
+    });
+})
 
 articleRoutes.route('/delete/:id').delete((req, res, next) => {
     article.findByIdAndRemove(req.params.id, (error, data) => {

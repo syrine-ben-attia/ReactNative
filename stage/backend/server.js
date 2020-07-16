@@ -24,6 +24,8 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 //app.use(cors());
+app.use(cors());
+app.options('*', cors());
 
 app.use('/public', express.static('public'));
 
